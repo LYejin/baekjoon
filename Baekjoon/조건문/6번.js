@@ -6,7 +6,6 @@ var currentHour = current[0];
 var currentMinute = current[1];
 var cook = Number(input[1]);
 
-// 내가 푼 풀이
 var cookMinute = currentMinute + cook;
 var cookHour = currentHour;
 
