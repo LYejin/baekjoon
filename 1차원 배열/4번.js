@@ -23,7 +23,7 @@ console.log(numArr.length);
 //set 이용한 풀이
 // let restArr = input.map(input => input % 42);
 
-// const set = new Set(restArr);
+// const set = new Set(restArr); //같은 값들 없애준다.
 // restArr = [...set];
 
 // console.log(restArr.length);
