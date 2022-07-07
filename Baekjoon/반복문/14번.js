@@ -30,7 +30,7 @@ while (result !== temp) {
 console.log(ylen);
 
 // 문 코드
-let input = require("fs").readFileSync("/dev/stdin").toString().split(" ");
+//let input = require("fs").readFileSync("/dev/stdin").toString().split(" ");
 
 var a = parseInt(input[0]);
 var result = -1;
