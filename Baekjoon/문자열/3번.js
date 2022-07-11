@@ -1,9 +1,9 @@
+// /dev/stdin
 const input = require("fs")
   .readFileSync("example.txt")
   .toString()
   .trim()
   .split(" ");
-//let input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n').map(x => Number(x));
 
 var alp = input[0].split("");
 let str = [];
