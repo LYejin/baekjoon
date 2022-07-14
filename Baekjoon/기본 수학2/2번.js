@@ -6,6 +6,7 @@ var N2 = Number(input[1]);
 var sum = 0;
 var first = 0;
 
+// 소수인지 아닌지 판가름
 const f = (num) => {
   if (parseInt(num) == 1) {
     return;
@@ -33,3 +34,7 @@ if (sum != 0) {
 } else {
   console.log(-1);
 }
+
+// 마지막 꺼 불러오는 방법
+// decimal.slice(-1)[0]
+// decimal.at(-1)
