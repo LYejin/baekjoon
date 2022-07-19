@@ -1,24 +1,27 @@
 const fs = require("fs");
-const input = fs.readFileSync("example.txt").toString().trim().split("\n");
+const [n, ...person] = fs
+  .readFileSync("example.txt")
+  .toString()
+  .trim()
+  .split("\n");
 // ./dev/stdin
 
-var result = "";
+let result = "";
+let count = [];
 
-for (i = 1; i <= parseInt(input[0]); i++) {
-  let num = 1;
-  for (z = 1; z <= parseInt(input[0]); z++) {
-    if (
-      input[i].split(" ")[0] < input[z].split(" ")[0] &&
-      input[i].split(" ")[1] < input[z].split(" ")[1]
-    ) {
-      num++;
+for (let i = 0; i < n; i++) {
+  let rank = 0;
+  for (let j = 0; j < n; j++) {
+    if (i == j) continue;
+    [aW, aT] = person[i].split(" ");
+    [bW, bT] = person[j].split(" ");
+
+    if (Number(aW) < Number(bW) && Number(aT) < Number(bT)) {
+      rank += 1;
     }
   }
-  if (i == input[0]) {
-    result += num;
-  } else {
-    result += num + " ";
-  }
+  var num = rank + 1;
+  result += num + " ";
 }
 
 console.log(result);
