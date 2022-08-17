@@ -1,25 +1,18 @@
-// 1차 내 코드
-const solve = (n, rgb) => {
-  dp = [...new Array(n + 1)].map((v) => new Array(0));
-  dp[1].append(3);
-  console.log(dp);
-  let result = [];
-  result[1] = rgb[0];
-  result[2] = rgb[0] + rgb[1];
-  console.log(result);
-  for (let i = 2; i <= n; i++) {
-    dp[i + 3].append(result[i] + rgb[i + 1] + rgb[i + 3]);
-    dp[i + 3].append(result[i] + rgb[i + 2] + rgb[i + 3]);
-    dp[i + 4].append(result[i] + rgb[i + 2] + rgb[i + 2]);
-    console.log(result);
-  }
-  console.log(Math.min(...dp[n]));
-};
-
-const [n, ...rgb] = require("fs")
-  .readFileSync("example.txt")
+let fs = require("fs");
+let stairs = fs
+  .readFileSync("/dev/stdin")
   .toString()
-  .trim()
-  .split("\n");
-solve(+n, rgb.map(Number));
-// /dev/stdin
+  .split("\n")
+  .map((element) => Number(element));
+const N = stairs[0];
+const dp = Array.from(new Array(N + 1));
+dp[1] = stairs[1];
+dp[2] = dp[1] + stairs[2];
+dp[3] = Math.max(stairs[1], stairs[2]) + stairs[3];
+for (let i = 4; i <= N; i++) {
+  dp[i] = Math.max(
+    dp[i - 3] + stairs[i - 1] + stairs[i],
+    dp[i - 2] + stairs[i]
+  );
+}
+console.log(dp[N]);
