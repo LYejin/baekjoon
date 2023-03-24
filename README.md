@@ -26,3 +26,10 @@
 
 2~6에서 입력받는 값들을 모두 String에서 Number로 바꾸려면 split()뒤에 .map(Number)를 추가
 trim()은 문자열 양 끝의 공백을 제거한다.
+
+### 자바
+
+1. 공백으로 한줄 입력을 받고 싶을 때
+   BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+   StringTokenizer st = new StringTokenizer(br.readLine());
+   int first = Integer.parseInt(st.nextToken());
